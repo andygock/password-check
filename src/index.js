@@ -95,7 +95,7 @@ const App = () => {
       {count > 0 && (
         <p style={{ color: "red" }}>
           This password has previously appeared in a data breach and should
-          never be used. If you've ever used it before anywhere before, change
+          never be used. If you've ever used it before anywhere, change
           it immediately!
         </p>
       )}
