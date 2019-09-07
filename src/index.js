@@ -124,8 +124,8 @@ const App = () => {
           </p>
           <p>
             This page will not send your password away from the web browser. The
-            first 5 characters of the password's SHA-1 hash is calculated
-            in-browser and sent to{" "}
+            password's SHA-1 hash is calculated in-browser, and the first 5
+            characters of the 40 character hexadecimal hash is sent to{" "}
             <a href="https://haveibeenpwned.com/API/v3#PwnedPasswords">
               https://haveibeenpwned.com/API/v3
             </a>
