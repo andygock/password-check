@@ -10,9 +10,13 @@ Install dependencies
 
     npm install
 
-Run with `parcel`
+Run with locally `parcel`
 
     npm run start
+
+Clean and build for production
+
+    npm run build
 
 ## Demo
 
