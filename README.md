@@ -4,19 +4,19 @@ Check a password against known data breaches using Troy Hunt's [Have I Been Pwne
 
 Requires globally installed [Parcel](https://github.com/parcel-bundler/parcel) bundler. If you don't have it already, install with:
 
-    npm i -g parcel-bundler
+    yarn global add parcel-bundler
 
 Install dependencies
 
-    npm install
+    yarn
 
 Run with locally `parcel`
 
-    npm run start
+    yarn start
 
 Clean and build for production
 
-    npm run build
+    yarn build
 
 ## Demo
 
