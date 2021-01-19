@@ -20,4 +20,4 @@ Clean and build for production
 
 ## Demo
 
-This code is running at <https://gock.net/pass-check/>
+This code is running at <https://pass-check.netlify.app/>
