@@ -1,9 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
 
-import "../node_modules/purecss/build/pure.css";
-import "./styles.css";
+import "./style.scss";
 
 // https://haveibeenpwned.com/API/v3#PwnedPasswords
 
@@ -18,17 +16,19 @@ const digest = async (input, type = "SHA-1") => {
   const hashArray = Array.from(new Uint8Array(hashBuffer));
 
   // convert bytes to hex string
-  const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+  const hashHex = hashArray
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
   return hashHex;
 };
 
-const fetchPwned = async hash => {
+const fetchPwned = async (hash) => {
   // console.log(`fetchPwned('${hash}')`);
 
   const url = `https://api.pwnedpasswords.com/range/${hash.slice(0, 5)}`;
   const response = await axios({
     method: "get",
-    url
+    url,
   });
 
   if (response.status !== 200) {
@@ -37,8 +37,8 @@ const fetchPwned = async hash => {
 
   const hashesFound = response.data
     .split("\n")
-    .filter(s => s.includes(hash.toUpperCase().slice(-5)))
-    .map(s => s.split(":"));
+    .filter((s) => s.includes(hash.toUpperCase().slice(-5)))
+    .map((s) => s.split(":"));
 
   if (hashesFound.length) {
     const count = hashesFound[0][1];
@@ -55,7 +55,7 @@ const App = () => {
 
   const inputRef = React.useRef();
 
-  const search = async text => {
+  const search = async (text) => {
     setIsSearching(true);
     const hashHex = await digest(text);
     setCount(await fetchPwned(hashHex));
@@ -86,8 +86,8 @@ const App = () => {
                 type="password"
                 value={password}
                 placeholder="Enter password..."
-                onChange={e => setPassword(e.target.value)}
-                onKeyUp={e => {
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyUp={(e) => {
                   if (e.key === "Enter") {
                     search(password);
                     e.target.select();
@@ -97,7 +97,7 @@ const App = () => {
               <button
                 className="pure-button pure-button-primary"
                 type="submit"
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   search(password);
                   inputRef.current.select();
@@ -142,5 +142,4 @@ const App = () => {
   );
 };
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+export default App;

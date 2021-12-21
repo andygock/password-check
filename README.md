@@ -2,17 +2,25 @@
 
 Check a password against known data breaches using Troy Hunt's [Have I Been Pwned API](https://haveibeenpwned.com/API/v3#PwnedPasswords)
 
+Install [pnpm](https://pnpm.io/)
+
+    npm install -g pnpm
+
 Install dependencies
 
-    yarn
+    pnpm install
 
-Run with locally `parcel`
+Start development server
 
-    yarn start
+    pnpm start
 
-Clean and build for production
+Build for production into `dist/`
 
-    yarn build
+    pnpm build
+
+If required, use the following Netlify build command
+
+    pnpm build || ( npm install pnpm && pnpm build )
 
 ## Demo
 
