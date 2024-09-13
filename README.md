@@ -24,4 +24,4 @@ If required, use the following Netlify build command
 
 ## Demo
 
-This code is running at <https://pass-check.netlify.app/>
+This code is running at <https://andygock.github.io/password-check/>

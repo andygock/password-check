@@ -27,10 +27,10 @@
   },
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "rimraf dist && parcel build public/index.html --public-url ./",
+    "build": "rimraf dist/* && parcel build public/index.html --public-url ./",
     "eslint": "eslint public/ src/",
     "pretty": "prettier --list-different --write .",
-    "clean": "rimraf dist && rimraf .cache && rimraf .parcel-cache"
+    "clean": "rimraf dist/* && rimraf .cache && rimraf .parcel-cache"
   },
   "browserslist": [
     ">0.2%",
